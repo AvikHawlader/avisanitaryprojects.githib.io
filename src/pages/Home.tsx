@@ -23,6 +23,16 @@ const Home = () => {
       image: heroLiving,
       description: "Contemporary living spaces with custom wardrobes",
     },
+    {
+      title: "Fix your aminities",
+      image: heroLiving,
+      description: "Contemporary living spaces with custom wardrobes",
+    },
+    {
+      title: "Price Calculator",
+      image: heroLiving,
+      description: "Contemporary living spaces with custom wardrobes",
+    },
   ];
 
   return (
