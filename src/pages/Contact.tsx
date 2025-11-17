@@ -52,10 +52,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a
-                      href="mailto:info@avisanitary.com"
+                      href="mailto:avikhawlader2002@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      info@avisanitary.com
+                      avikhawlader2002@gmail.com
                     </a>
                   </div>
                 </div>
@@ -69,7 +69,8 @@ const Contact = () => {
                     <p className="text-muted-foreground">
                       AVI SANITARY Projects
                       <br />
-                      Visit us for consultations
+                      Ganguli Para, Shyamnagar, Kolkata, Garshyamnagar
+                      West Bengal 743127
                     </p>
                   </div>
                 </div>
@@ -107,7 +108,7 @@ const Contact = () => {
             <Card className="h-full">
               <CardContent className="p-0 h-full min-h-[500px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235014.10635439568!2d88.19967444709035!3d22.5354447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b0fac8d023%3A0x97117ecac0ee2224!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.4292716438226!2d88.38576097553589!3d22.823602423723543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f890b8e0bf46c1%3A0xc1743adc39777244!2sAvi%20Sanatary!5e0!3m2!1sen!2sin!4v1763409268555!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: "500px" }}
