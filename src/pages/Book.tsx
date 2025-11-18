@@ -24,7 +24,7 @@ const Book = () => {
 
     // CHANGE THESE TWO NUMBERS
     const ownerNumber = "919330014377";     // ← Your number
-    const managerNumber = "919876543210";   // ← Manager's number
+    const managerNumber = "918017614312";   // ← Manager's number
     const customerNumber = "91" + formData.phone;
 
     const bookingDetails = encodeURIComponent(
