@@ -24,86 +24,59 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <a href="tel:+919330014377" class="float-call-btn">
--    📞Need to fix? Call now
-+    <img src="plumber.png" alt="Plumber" class="float-plumber" />
-+    <span class="float-text">Need to fix? Call now</span>
-    </a>
+  <img src="plumber.png" alt="Plumber" class="float-plumber" />
+  <span class="float-text">Need to fix? Call now</span>
+</a>
+
 <style>
--    .float-call-btn {
--        position: fixed;
--        bottom: 25px;
--        right: 25px;
--        width: 60px;
--        height: 60px;
--        background-color: #000000; /* Solid Black */
--        color: #FFF;
--        border-radius: 50%;
--        text-align: center;
--        font-size: 30px;
--        line-height: 63px; /* Centers the emoji vertically */
--        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
--        z-index: 10000;
--        text-decoration: none;
--        transition: transform 0.3s ease;
--    }
--
--    .float-call-btn:hover {
--        background-color: #2E7D32; /* Turns Green on Hover */
--        transform: scale(1.1);
--    }
-+    .float-call-btn {
-+        position: fixed;
-+        bottom: 20px;
-+        right: 20px;
-+        display: flex;
-+        align-items: center;
-+        gap: 10px;
-+        padding: 8px 12px;
-+        min-width: 180px;
-+        background-color: #000000;
-+        color: #fff;
-+        border-radius: 30px;
-+        font-size: 14px;
-+        font-weight: 600;
-+        box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
-+        z-index: 10000;
-+        text-decoration: none;
-+        transition: transform 0.18s ease, background-color 0.18s ease;
-+    }
-+
-+    .float-call-btn:hover {
-+        background-color: #2E7D32;
-+        transform: translateY(-3px);
-+    }
-+
-+    .float-plumber {
-+        width: 44px;
-+        height: 44px;
-+        object-fit: contain;
-+        border-radius: 8px;
-+        background: transparent;
-+        display: inline-block;
-+        flex: 0 0 44px;
-+    }
-+
-+    .float-text {
-+        display: inline-block;
-+        line-height: 1;
-+    }
-+
-+    /* Responsive: collapse to round icon on very small screens */
-+    @media (max-width: 420px) {
-+        .float-call-btn {
-+            min-width: 60px;
-+            padding: 6px;
-+            border-radius: 50%;
-+            width: 60px;
-+            height: 60px;
-+            justify-content: center;
-+        }
-+        .float-text { display: none; }
-+        .float-plumber { width: 34px; height: 34px; flex: 0 0 34px; }
-+    }
+  .float-call-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    min-width: 180px;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+    z-index: 10000;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .float-call-btn:hover {
+    background-color: #2E7D32;
+    transform: translateY(-4px);
+  }
+
+  .float-plumber {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .float-text {
+    line-height: 1.2;
+  }
+
+  @media (max-width: 420px) {
+    .float-call-btn {
+      min-width: auto;
+      width: 60px;
+      height: 60px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .float-text { display: none; }
+    .float-plumber { width: 36px; height: 36px; }
+  }
 </style>
   </body>
 </html>
