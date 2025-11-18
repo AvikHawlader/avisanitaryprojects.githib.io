@@ -9,9 +9,8 @@ import { toast } from "sonner";
 const Book = () => {
   const [formData, setFormData] = useState({ name: "", phone: "", date: "" });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.name || !formData.phone || !formData.date) {
@@ -23,30 +22,30 @@ const Book = () => {
       return;
     }
 
-    setLoading(true);
+    // CHANGE THESE TWO NUMBERS
+    const ownerNumber = "919330014377";     // ← Your number
+    const managerNumber = "919876543210";   // ← Manager's number
+    const customerNumber = "91" + formData.phone;
 
-    try {
-      const res = await fetch("/api/send-sms", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          date: formData.date,
-        }),
-      });
+    const bookingDetails = encodeURIComponent(
+      `NEW BOOKING!\n\nName: ${formData.name}\nPhone: ${formData.phone}\nDate: ${formData.date}\n\nCall them now! - AVI SANITARY Projects`
+    );
 
-      if (res.ok) {
-        setSubmitted(true);
-        toast.success("Booking confirmed! SMS sent to all 3 numbers.");
-      } else {
-        toast.error("SMS failed. Try WhatsApp.");
-      }
-    } catch {
-      toast.error("Network error. Try WhatsApp.");
-    } finally {
-      setLoading(false);
-    }
+    const customerConfirm = encodeURIComponent(
+      `Hi ${formData.name}!\n\nYour FREE design consultation is booked for ${formData.date}.\n\nWe'll call you shortly to confirm the time.\n\nThank you for choosing AVI SANITARY Projects!\nWhatsApp: +919330014377`
+    );
+
+    // Send to Owner
+    window.open(`https://wa.me/${ownerNumber}?text=${bookingDetails}`, "_blank");
+    // Send to Manager
+    window.open(`https://wa.me/${managerNumber}?text=${bookingDetails}`, "_blank");
+    // Send to Customer (after 1.5 sec so browser doesn't block)
+    setTimeout(() => {
+      window.open(`https://wa.me/${customerNumber}?text=${customerConfirm}`, "_blank");
+    }, 1500);
+
+    setSubmitted(true);
+    toast.success("Booking confirmed! WhatsApp messages sent to all 3 numbers");
   };
 
   const handleWhatsApp = () => {
@@ -73,7 +72,7 @@ const Book = () => {
               <CheckCircle2 className="h-20 w-20 text-primary mx-auto mb-6" />
               <h1 className="text-3xl font-bold mb-4">Slot Confirmed!</h1>
               <p className="text-lg text-muted-foreground mb-8">
-                SMS sent to you, manager & customer instantly.
+                WhatsApp messages sent to you, manager & customer instantly.
               </p>
               <Button asChild size="lg" className="w-full">
                 <a href="/">Back to Home</a>
@@ -125,8 +124,8 @@ const Book = () => {
                   <Label>Preferred Date *</Label>
                   <Input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required min={new Date().toISOString().split("T")[0]} />
                 </div>
-                <Button type="submit" className="w-full" size="lg" disabled={loading}>
-                  {loading ? "Sending SMS..." : "Confirm Booking"}
+                <Button type="submit" className="w-full" size="lg">
+                  Confirm Booking
                 </Button>
               </form>
             </CardContent>
