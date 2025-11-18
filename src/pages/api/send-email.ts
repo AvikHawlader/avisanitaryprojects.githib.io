@@ -10,10 +10,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     await resend.emails.send({
-      from: 'AVI SANITARY Projects <booking@avisanitaryprojects.com>',
+      from: 'AVI SANITARY Projects <avikhawlader2002@gmail.com>',
       to: [
-        'you@gmail.com',           // ← Your email
-        'manager@gmail.com',        // ← Manager's email
+        'avikhawlader2002@gmail.com',           // ← Your email
+        'avikhawlader123@gmail.com',        // ← Manager's email
       ],
       subject: `New Booking: ${name} - ${date}`,
       html: `
@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Optional: Auto-reply to customer
     await resend.emails.send({
-      from: 'AVI SANITARY Projects <booking@avisanitaryprojects.com>',
+      from: 'AVI SANITARY Projects <avikhawlader2002@gmail.com>',
       to: `${phone}@example.com`, // Dummy — we'll use WhatsApp fallback
       subject: 'Your Appointment is Booked!',
       html: `Hi ${name},<br><br>Thank you! Your consultation is booked for <strong>${date}</strong>.<br>We will call you soon to confirm.<br><br>Team AVI SANITARY Projects`,
