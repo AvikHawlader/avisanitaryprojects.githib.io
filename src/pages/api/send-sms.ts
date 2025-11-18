@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // CHANGE THESE 10-DIGIT NUMBERS
   const ownerNumber   = "9330014377";     // Your number
-  const managerNumber = "98xxxxxxxx";     // Manager number
+  const managerNumber = "8017614312";     // Manager number
 
   const authkey = process.env.MSG91_AUTHKEY;  // Your MSG91 auth key
   const sender  = "AVISAN";                   // Your approved sender ID
